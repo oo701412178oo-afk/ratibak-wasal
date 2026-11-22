@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087c55">
+<title>راتبك وصل</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f3f6f5;
+ color:#202b27;
+}
+header{
+ background:#087c55;
+ color:white;
+ padding:25px 20px;
+ border-radius:0 0 25px 25px;
+}
+header h1{margin:0 0 8px;font-size:27px}
+header p{margin:0;opacity:.9}
+.container{padding:18px}
+.welcome{
+ background:white;
+ padding:20px;
+ border-radius:16px;
+ margin-bottom:18px;
+ box-shadow:0 3px 12px #00000008;
+}
+.welcome h2{margin:0 0 8px;color:#087c55}
+.search{
+ width:100%;
+ padding:15px;
+ border:1px solid #ddd;
+ border-radius:12px;
+ font-size:16px;
+ margin-bottom:18px;
+}
+.section-title{font-size:19px;margin:12px 0}
+.card{
+ background:white;
+ padding:18px;
+ border-radius:15px;
+ margin-bottom:13px;
+ border-right:5px solid #087c55;
+}
+.card h3{margin:0 0 12px}
+.status{
+ color:#087c55;
+ font-weight:bold;
+}
+.notice{
+ background:#fff8e6;
+ border-radius:14px;
+ padding:16px;
+ margin-top:18px;
+}
+footer{
+ text-align:center;
+ color:#777;
+ padding:25px;
+ font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>راتبك وصل 💰</h1>
+<p>تابع أخبار الرواتب ومواعيد الصرف</p>
+</header>
+
+<div class="container">
+
+<div class="welcome">
+<h2>أهلاً بك 👋</h2>
+<p>مرحباً بك في منصة راتبك وصل لمتابعة أخبار صرف الرواتب.</p>
+</div>
+
+<input class="search" id="search"
+placeholder="ابحث عن جهة أو قطاع..."
+oninput="filterCards()">
+
+<h2 class="section-title">آخر أخبار الرواتب</h2>
+
+<div id="news">
+
+<div class="card">
+<h3>أخبار صرف الرواتب</h3>
+<p>ستظهر هنا آخر أخبار صرف الرواتب.</p>
+<span class="status">بانتظار التحديث</span>
+</div>
+
+<div class="card">
+<h3>القطاع الحكومي</h3>
+<p>تابع مستجدات صرف رواتب القطاع الحكومي.</p>
+<span class="status">بانتظار التحديث</span>
+</div>
+
+<div class="card">
+<h3>القطاع العسكري</h3>
+<p>تابع مستجدات صرف الرواتب العسكرية.</p>
+<span class="status">بانتظار التحديث</span>
+</div>
+
+</div>
+
+<div class="notice">
+<strong>تنبيه مهم</strong>
+<p>سيتم نشر تحديثات الرواتب فور إضافتها من إدارة المنصة.</p>
+</div>
+
+</div>
+
+<footer>
+راتبك وصل © 2026
+<br>جميع الحقوق محفوظة
+</footer>
+
+<script>
+function filterCards(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ document.querySelectorAll(".card").forEach(card=>{
+  card.style.display=card.innerText.toLowerCase().includes(q)?"block":"none";
+ });
+}
+</script>
+
+</body>
+</html>
